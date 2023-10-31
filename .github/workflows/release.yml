@@ -1,0 +1,18 @@
+name: Releases
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git checkout
+      - uses: actions/checkout@v4
+      - name: Setup rust
+        uses: ATiltedTree/setup-rust@v1.0.5
+        with:
+          rust-version: stable
+      - name: Compile
+        run: cargo check

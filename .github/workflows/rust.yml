@@ -15,6 +15,6 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build linux arm
-      run: cargo build -r --target aarch64-unknown-linux-gnu --bin gha-rust-aarch64-unknown-linux-gnu
+      run: cargo build -r --target aarch64-unknown-linux-gnu
     - name: Build linux desktop
-      run: cargo build -r --target x86_64-unknown-linux-gnu --bin gha-rust-x86_64-unknown-linux-gnu
+      run: cargo build -r --target x86_64-unknown-linux-gnu

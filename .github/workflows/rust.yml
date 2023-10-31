@@ -14,7 +14,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - uses: ATiltedTree/setup-rust@v1.0.5
+      with:
+        rust-version: stable
+    - run: rustup target add aarch64-unknown-linux-gnu
+    - run: rustup target add x86_64-pc-windows-gnu
+    - run: rustup target add x86_64-unknown-linux-gnu
     - name: Build linux arm
       run: cargo build -r --target aarch64-unknown-linux-gnu
     - name: Build linux desktop
       run: cargo build -r --target x86_64-unknown-linux-gnu
+
